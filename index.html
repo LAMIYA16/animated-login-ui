@@ -1,59 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="transition-colors duration-500">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Animated Login</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 transition duration-500 ease-in-out">
-  <div class="animate-slide-up bg-white shadow-lg p-8 rounded-xl w-full max-w-md">
-    <div class="text-center">
-      <div class="mb-4">
-       <img src="https://thumb.ac-illust.com/33/33379f4342b6b3678554007c66977d5d_t.jpeg"   width="60" height="50" 
-     class="mx-auto w-[60px] filter hue-rotate-[200deg] saturate-[2] animate-bounce-slow" />
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 dark:bg-gray-900 transition-all duration-500 ease-in-out">
 
-      </div>
-      <h2 class="text-2xl font-semibold text-purple-700">Welcome Back</h2>
-      <p class="text-sm text-gray-500">Sign in to your account to continue</p>
+  <!-- Theme Toggle -->
+  <button id="themeToggle" class="absolute top-5 right-5 bg-gray-200 dark:bg-gray-700 text-black dark:text-white p-2 rounded-full shadow hover:scale-110 transition">
+    🌙
+  </button>
+
+  <!-- Login Box -->
+  <div class="animate-slide-up bg-white dark:bg-gray-800 dark:text-white shadow-lg p-8 rounded-xl w-full max-w-md relative z-10">
+    <div class="text-center">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjqAdFxDT1Cmw50V64t3teufBB9l22_T-Edg&s" width="60" height="50" class="mx-auto w-[60px] filter hue-rotate-[200deg] saturate-[2] animate-bounce-slow" />
+      <h2 class="text-2xl font-semibold text-purple-700 dark:text-purple-300 mt-4">Welcome Back</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Sign in to your account to continue</p>
     </div>
+
     <form class="mt-6 space-y-4">
       <div>
-        <label class="block text-gray-600">Email</label>
-        <input type="email" placeholder="Enter your email"
-               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 transition duration-300" />
+        <label class="block text-gray-600 dark:text-gray-300">Email or Username</label>
+        <input type="email" placeholder="Enter your email/Username" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 dark:bg-gray-700 dark:text-white dark:border-gray-600 transition duration-300" />
       </div>
       <div>
-        <label class="block text-gray-600">Password</label>
-        <input type="password" placeholder="Enter your password"
-               class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 transition duration-300" />
+        <label class="block text-gray-600 dark:text-gray-300">Password</label>
+        <input type="password" placeholder="Enter your password" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-400 dark:bg-gray-700 dark:text-white dark:border-gray-600 transition duration-300" />
       </div>
+
       <div class="text-right">
         <a href="#" class="text-sm text-blue-500 hover:underline">Forgot your password?</a>
       </div>
-      <button type="submit"
-              class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 rounded-lg hover:from-purple-600 hover:to-indigo-600 transition-all duration-300">
-        Sign In
-      </button>
-      
-     <button id="themeToggle" class="absolute top-5 right-5 bg-gray-200 p-2 rounded-full">
-  🌙
-     </button>
-    <div class="bubbles">
-  <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
-  <div class="bubble" style="left: 20%; animation-delay: 2s; width: 30px; height: 30px;"></div>
-  <div class="bubble" style="left: 35%; animation-delay: 4s;"></div>
-  <div class="bubble" style="left: 50%; animation-delay: 1s; width: 25px; height: 25px;"></div>
-  <div class="bubble" style="left: 65%; animation-delay: 3s;"></div>
-  <div class="bubble" style="left: 80%; animation-delay: 5s; width: 35px; height: 35px;"></div>
-  <div class="bubble" style="left: 90%; animation-duration: 9s; animation-delay: 1s;"></div>
-  <div class="bubble" style="left: 95%; animation-duration: 7s; animation-delay: 2s;"></div>
-</div>
 
-      <p class="text-center text-sm text-gray-500 mt-4">Don't have an account? <a href="#" class="text-blue-500">Sign up</a></p>
+      <!-- Login Button -->
+      <button class="w-full bg-gradient-to-r from-violet-900 to-blue-800 text-white py-2 px-6 rounded-lg font-semibold
+        hover:from-purple-600 hover:to-blue-600 hover:text-white hover:scale-105 hover:shadow-lg
+        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
+        transition-all duration-300 ease-in-out">
+        LOGIN
+      </button>
+
+      <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">Don't have an account?
+        <a href="#" class="text-blue-500 hover:underline">Sign up</a>
+      </p>
     </form>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Bubbles -->
+  <div class="bubbles absolute inset-0 z-0 overflow-hidden">
+    <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 20%; animation-delay: 2s; width: 30px; height: 30px;"></div>
+    <div class="bubble" style="left: 35%; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 50%; animation-delay: 1s; width: 25px; height: 25px;"></div>
+    <div class="bubble" style="left: 65%; animation-delay: 3s;"></div>
+    <div class="bubble" style="left: 80%; animation-delay: 5s; width: 35px; height: 35px;"></div>
+    <div class="bubble" style="left: 90%; animation-duration: 9s; animation-delay: 1s;"></div>
+    <div class="bubble" style="left: 95%; animation-duration: 7s; animation-delay: 2s;"></div>
+  </div>
+
+  <script>
+    // Theme Toggle Script
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
